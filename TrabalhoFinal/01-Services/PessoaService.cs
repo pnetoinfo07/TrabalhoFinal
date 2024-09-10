@@ -24,12 +24,12 @@ public class PessoaService
     {
         return repository.Listar();
     }
-    public void BuscarTimePorId(int id)
+    public Pessoa BuscarTimePorId(int id)
     {
-        //return repository.BuscarPorId(id);
+        return repository.BuscarPorId(id);
     }
-    public void Editar(int id, Pessoa editPessoa)
+    public void Editar( Pessoa editPessoa)
     {
-        repository.Editar(id, editPessoa);
+        repository.Editar(editPessoa);
     }
 }

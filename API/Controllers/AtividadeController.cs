@@ -8,29 +8,29 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PessoaController : ControllerBase
+public class AtividadeController : ControllerBase
 {
-    private readonly PessoaService _service;
+    private readonly AtividadeService _service;
     private readonly IMapper _mapper;
-    public PessoaController(IConfiguration config, IMapper mapper)
+    public AtividadeController(IConfiguration config, IMapper mapper)
     {
         string _config = config.GetConnectionString("DefaultConnection");
-        _service = new PessoaService(_config);
+        _service = new AtividadeService(_config);
         _mapper = mapper;
     }
-    [HttpPost("adicionar-pessoa")]
-    public void AdicionarAluno(CreatePessoaDTO pessoaDTO)
+    [HttpPost("adicionar-atividade")]
+    public void AdicionarAluno(Atividade atividade)
     {
-        Pessoa pessoa = _mapper.Map<Pessoa>(pessoaDTO);
-        _service.Adicionar(pessoa);
+        //Atividade pessoa = _mapper.Map<Atividade>(pessoaDTO);
+        _service.Adicionar(atividade);
     }
     [HttpGet("listar-pessoa")]
-    public List<Pessoa> ListarAluno()
+    public List<Atividade> ListarAluno()
     {
         return _service.Listar();
     }
     [HttpPut("editar-pessoa")]
-    public void EditarPessoa(Pessoa p)
+    public void EditarPessoa(Atividade p)
     {
         _service.Editar(p);
     }
