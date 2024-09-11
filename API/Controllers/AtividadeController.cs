@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TrabalhoFinal._01_Services;
 using TrabalhoFinal._03_Entidades;
-using TrabalhoFinal._03_Entidades.DTOs;
 
 namespace API.Controllers;
 
@@ -21,7 +20,6 @@ public class AtividadeController : ControllerBase
     [HttpPost("adicionar-atividade")]
     public void AdicionarAluno(Atividade atividade)
     {
-        //Atividade pessoa = _mapper.Map<Atividade>(pessoaDTO);
         _service.Adicionar(atividade);
     }
     [HttpGet("listar-pessoa")]

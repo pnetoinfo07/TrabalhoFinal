@@ -36,7 +36,13 @@ namespace TrabalhoFinal._02_Repository.Data
                  DiaId INTEGER NOT NULL,
                  PessoaId INTEGER NOT NULL,
                  AtividadeId INTEGER NOT NULL
-                );";
+                 );";
+
+                commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Dias(
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Data TEXT NOT NULL
+                 );";
 
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
