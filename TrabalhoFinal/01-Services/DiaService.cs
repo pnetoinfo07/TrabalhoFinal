@@ -15,9 +15,9 @@ namespace TrabalhoFinal._01_Services
             repository.Adicionar();
         }
 
-        public void Remover(int id)
+        public void Remover()
         {
-            repository.Remover(id);
+            repository.Remover();
         }
 
         public List<Dia> Listar()

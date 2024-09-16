@@ -29,7 +29,7 @@ namespace TrabalhoFinal._02_Repository
                 connection.Insert<Dia>(d);
             }           
         }
-        public void Remover(int id)
+        public void Remover()
         {
             using var connection = new SQLiteConnection(ConnectionString);
             List<Dia> dias = Listar();
@@ -42,6 +42,11 @@ namespace TrabalhoFinal._02_Repository
         {
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.GetAll<Dia>().ToList();
+        }
+        public Dia BuscarPorID(int id)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+            return connection.Get<Dia>(id);
         }
     }
 }

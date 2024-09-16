@@ -15,7 +15,7 @@ namespace API.Controllers
         public RotinaController(IConfiguration config, IMapper mapper)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = new RotinaService(_config);
+            _service = new RotinaService(_config, mapper);
             _mapper = mapper;
         }
         [HttpPost("adicionar-rotina")]
@@ -25,7 +25,7 @@ namespace API.Controllers
             _service.Adicionar(rotina);
         }
         [HttpGet("listar-rotina")]
-        public List<Rotina> ListarAluno()
+        public List<ReadRotinaDTO> ListarAluno()
         {
             return _service.Listar();
         }

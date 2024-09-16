@@ -1,14 +1,16 @@
-﻿using TrabalhoFinal._02_Repository.Data;
+﻿using AutoMapper;
+using TrabalhoFinal._02_Repository.Data;
 using TrabalhoFinal._03_Entidades;
+using TrabalhoFinal._03_Entidades.DTOs;
 
 namespace TrabalhoFinal._01_Services;
 
 public class RotinaService
 {
     public RotinaRepository repository { get; set; }
-    public RotinaService(string _config)
+    public RotinaService(string _config, IMapper mapper)
     {
-        repository = new RotinaRepository(_config);
+        repository = new RotinaRepository(_config, mapper);
     }
     public void Adicionar(Rotina rotina)
     {
@@ -18,7 +20,7 @@ public class RotinaService
     {
         repository.Remover(id);
     }
-    public List<Rotina> Listar()
+    public List<ReadRotinaDTO> Listar()
     {
         return repository.Listar();
     }

@@ -10,6 +10,5 @@ namespace TrabalhoFinal._03_Entidades
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
-        public List<Rotina> Rotinas { get; set; }
     }
 }

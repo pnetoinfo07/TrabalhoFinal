@@ -28,9 +28,9 @@ namespace API.Controllers
             return _service.Listar();
         }
         [HttpDelete("deletar-dia")]
-        public void DeletarPessoa(int id)
+        public void DeletarPessoa()
         {
-            _service.Remover(id);
+            _service.Remover();
         }
 
     }
