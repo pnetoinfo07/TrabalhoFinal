@@ -13,6 +13,7 @@ namespace TrabalhoFinal._03_Entidades.DTOs
         public Dia Dia { get; set; }
         public int PessoaId { get; set; }
         public Pessoa Pessoa { get; set; }
-        public List<Atividade> Atividade { get; set; }
+        public Atividade Atividade { get; set; }
+        public int TotalAtividadesVendidas { get; set; }
     }
 }

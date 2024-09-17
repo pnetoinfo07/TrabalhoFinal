@@ -55,7 +55,7 @@ namespace TrabalhoFinal._02_Repository.Data
                 rotinaDTO.Dia = _repositoryDia.BuscarPorID(r.DiaId);
                 rotinaDTO.PessoaId = r.PessoaId;
                 rotinaDTO.Pessoa = _repositoryPessoa.BuscarPorId(r.PessoaId);
-                rotinaDTO.Atividade = _repositoryAtividade.BuscarPorId(r.AtividadeId);
+                rotinaDTO.Atividade =  _repositoryAtividade.BuscarPorId(r.AtividadeId);                
                 rotinasDTO.Add(rotinaDTO);
             }
             return rotinasDTO;
